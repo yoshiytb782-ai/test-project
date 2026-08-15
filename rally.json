@@ -9,37 +9,37 @@
             "id": "stamp01",
             "number": 1,
             "name": "スタンプ1",
-            "model": "assets/stamps/stamp01/stamp01.glb"
+            "model": "assets/stamps/stamps01/stamp01.glb"
         },
         {
             "id": "stamp02",
             "number": 2,
             "name": "スタンプ2",
-            "model": "assets/stamps/stamp02/stamp02.glb"
+            "model": "assets/stamps/stamps02/stamp02.glb"
         },
         {
             "id": "stamp03",
             "number": 3,
             "name": "スタンプ3",
-            "model": "assets/stamps/stamp03/stamp03.glb"
+            "model": "assets/stamps/stamps03/stamp03.glb"
         },
         {
             "id": "stamp04",
             "number": 4,
             "name": "スタンプ4",
-            "model": "assets/stamps/stamp04/stamp04.glb"
+            "model": "assets/stamps/stamps04/stamp04.glb"
         },
         {
             "id": "stamp05",
             "number": 5,
             "name": "スタンプ5",
-            "model": "assets/stamps/stamp05/stamp05.glb"
+            "model": "assets/stamps/stamps05/stamp05.glb"
         },
         {
             "id": "stamp06",
             "number": 6,
             "name": "スタンプ6",
-            "model": "assets/stamps/stamp06/stamp06.glb"
+            "model": "assets/stamps/stamps06/stamp06.glb"
         }
     ],
 
