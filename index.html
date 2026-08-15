@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <title>スタンプラリー</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 3Dモデル表示 -->
+    <script
+        type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
+    </script>
+
+    <!-- QRコード読み取り -->
+    <script src="https://unpkg.com/html5-qrcode" defer></script>
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- =========================
+         スタート画面
+    ========================== -->
+    <section id="startScreen" class="screen">
+
+        <div class="card">
+
+            <div class="logo-area">
+                <img
+                    id="logoImage"
+                    src="assets/screen/logo.png"
+                    alt="スタンプラリー"
+                    onerror="this.style.display='none'"
+                >
+            </div>
+
+            <h1 id="title">スタンプラリー</h1>
+
+            <p id="description">
+                6つのスタンプを集めよう！
+            </p>
+
+            <button id="startButton" class="main-button">
+                スタート
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         スタンプラリー画面
+    ========================== -->
+    <section id="rallyScreen" class="screen hidden">
+
+        <header class="header">
+
+            <h1 id="rallyTitle">
+                スタンプラリー
+            </h1>
+
+            <div id="progressText">
+                0 / 6
+            </div>
+
+        </header>
+
+
+        <!-- スタンプ一覧 -->
+        <div id="stampList" class="stamp-list">
+        </div>
+
+
+        <!-- QR読み取りボタン -->
+        <button
+            id="scanButton"
+            class="main-button scan-button"
+        >
+            📷 QRコードを読み取る
+        </button>
+
+
+        <!-- QRスキャナー -->
+        <div
+            id="scannerArea"
+            class="scanner-area hidden"
+        >
+
+            <div id="reader"></div>
+
+            <button
+                id="closeScannerButton"
+                class="secondary-button"
+            >
+                閉じる
+            </button>
+
+        </div>
+
+
+        <!-- メッセージ -->
+        <div id="messageArea" class="message">
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         スタンプ獲得画面
+    ========================== -->
+    <section id="stampScreen" class="screen hidden">
+
+        <div class="card">
+
+            <div class="success-icon">
+                ★
+            </div>
+
+            <h2 id="stampTitle">
+                スタンプ獲得！
+            </h2>
+
+            <p id="stampMessage">
+                スタンプを獲得しました！
+            </p>
+
+
+            <!-- 3Dモデル -->
+            <div class="model-container">
+
+                <model-viewer
+                    id="stampModel"
+                    camera-controls
+                    auto-rotate
+                    shadow-intensity="1"
+                    exposure="1"
+                    interaction-prompt="auto"
+                    alt="3Dスタンプ"
+                >
+                </model-viewer>
+
+            </div>
+
+
+            <button
+                id="backButton"
+                class="main-button"
+            >
+                スタンプ一覧へ
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         コンプリート画面
+    ========================== -->
+    <section id="completeScreen" class="screen hidden">
+
+        <div class="complete-card">
+
+            <h1>
+                🎉 おめでとう！ 🎉
+            </h1>
+
+            <p>
+                6つのスタンプをすべて集めました！
+            </p>
+
+
+            <div class="movie-container">
+
+                <video
+                    id="completeMovie"
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+                    <source
+                        src="assets/movie/congratulations.mp4"
+                        type="video/mp4"
+                    >
+                    お使いのブラウザでは動画を再生できません。
+                </video>
+
+            </div>
+
+
+            <button
+                id="restartButton"
+                class="secondary-button"
+            >
+                スタンプラリー画面へ
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
