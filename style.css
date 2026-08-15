@@ -1,1 +1,464 @@
+/* =========================
+   基本設定
+========================= */
 
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Yu Gothic",
+        YuGothic,
+        sans-serif;
+
+    color: #333;
+    background: #f5f7fb;
+}
+
+
+/* =========================
+   画面
+========================= */
+
+.screen {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   カード
+========================= */
+
+.card,
+.complete-card {
+    width: 100%;
+    max-width: 600px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   スタート画面
+========================= */
+
+.logo-area {
+    margin-bottom: 20px;
+}
+
+.logo-area img {
+    max-width: 220px;
+    max-height: 120px;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+#description {
+    font-size: 17px;
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+.main-button,
+.secondary-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.main-button {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a59,
+            #ff4d6d
+        );
+
+    box-shadow:
+        0 6px 15px rgba(255, 77, 109, 0.3);
+}
+
+.main-button:active {
+    transform: scale(0.97);
+}
+
+.secondary-button {
+    margin-top: 15px;
+
+    background: #eeeeee;
+    color: #444;
+}
+
+.scan-button {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   ラリー画面
+========================= */
+
+#rallyScreen {
+    display: block;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+#progressText {
+    background: #ff4d6d;
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   スタンプ一覧
+========================= */
+
+.stamp-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.stamp-item {
+    min-height: 150px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.stamp-number {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    background: #eeeeee;
+
+    color: #999;
+
+    margin-bottom: 10px;
+}
+
+.stamp-item.collected .stamp-number {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd166,
+            #ff9f1c
+        );
+
+    color: white;
+}
+
+.stamp-name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.stamp-status {
+    font-size: 13px;
+
+    color: #999;
+
+    margin-top: 5px;
+}
+
+.stamp-item.collected .stamp-status {
+    color: #ff7a00;
+}
+
+
+/* =========================
+   QRスキャナー
+========================= */
+
+.scanner-area {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+#reader {
+    width: 100%;
+}
+
+#reader video {
+    border-radius: 15px;
+}
+
+
+/* =========================
+   メッセージ
+========================= */
+
+.message {
+    margin-top: 20px;
+
+    min-height: 30px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.message.success {
+    color: #1b9aaa;
+}
+
+.message.error {
+    color: #e63946;
+}
+
+
+/* =========================
+   3Dモデル
+========================= */
+
+.model-container {
+    width: 100%;
+
+    height: 400px;
+
+    margin-top: 20px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff,
+            #e9edf5
+        );
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================
+   獲得画面
+========================= */
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd166,
+            #ff9f1c
+        );
+
+    color: white;
+
+    font-size: 40px;
+}
+
+
+/* =========================
+   コンプリート
+========================= */
+
+.complete-card {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff7e6
+        );
+}
+
+.complete-card h1 {
+    color: #ff6b35;
+}
+
+.movie-container {
+    width: 100%;
+
+    margin-top: 25px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: black;
+}
+
+.movie-container video {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================
+   PC
+========================= */
+
+@media (min-width: 700px) {
+
+    .stamp-list {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .screen {
+        padding: 40px;
+    }
+}
+
+
+/* =========================
+   小さいスマートフォン
+========================= */
+
+@media (max-width: 380px) {
+
+    .screen {
+        padding: 12px;
+    }
+
+    .card,
+    .complete-card {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .model-container {
+        height: 330px;
+    }
+}
